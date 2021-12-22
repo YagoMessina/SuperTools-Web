@@ -1,0 +1,66 @@
+.login-form {
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 0;
+}
+
+.login-form h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form input {
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: 0px solid #000;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.login-form input[type="text"],
+input[type="password"] {
+  text-decoration: underline rgb(66, 66, 66);
+  text-underline-offset: 2.5px;
+  width: 200vh;
+}
+
+.login-form input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+}
+
+.login-form input[type="submit"] {
+  margin: 0 auto;
+  font-weight: bold;
+  padding: 5px 15px 5px 15px;
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: var(--color-primary-darker);
+}
+
+.login-form input[type="submit"]:focus {
+  background-color: var(--color-primary-darker);
+  outline: none;
+}
+
+.login-form img {
+  width: 4%;
+  position: absolute;
+  margin-right: 50px;
+  top: -60px;
+}
+
+.login-form svg {
+  width: 3%;
+  position: absolute;
+  margin-left: 50px;
+  top: -60px;
+}
