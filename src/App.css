@@ -1,5 +1,39 @@
 :root {
   --color-primary: #6780fa;
-  --asd: #000;
   --color-primary-darker: #4d6aff;
+
+  --transition-speed: 600ms;
+
+  --color-navbar-text: #ccc5b9;
+  --color-navbar-secondary: #403d39;
+  --color-navbar-background: #252422;
+
+  --color-background: #000;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-navbar-secondary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+}
+
+main {
+  margin-left: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    margin: 0;
+    margin-bottom: 5.5rem;
+  }
 }
