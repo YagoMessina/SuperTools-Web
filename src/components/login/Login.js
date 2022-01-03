@@ -15,7 +15,7 @@ const Login = (props) => {
     <>
       <WaveTop />
       <div className="login-form">
-        <img src={logo} />
+        <img src={logo} alt="logo" />
         <form onSubmit={submit}>
           <input
             type="text"

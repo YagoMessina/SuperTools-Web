@@ -2,7 +2,14 @@ import React from "react";
 import "./Note.css";
 
 const Note = (props) => {
-  return <div class="note">{props.title}</div>;
+  const handleClick = () => {
+    alert("hola");
+  };
+  return (
+    <div className="note" onClick={handleClick}>
+      {props.title}
+    </div>
+  );
 };
 
 export default Note;
