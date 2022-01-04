@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const baseUrl = "https://swapi.dev/api";
+const baseUrl = "https://localhost:3000";
 
-const doGet = (url) => {
+export const doGet = (url) => {
   axios
     .get(baseUrl + url)
     .then((response) => {
@@ -12,9 +12,3 @@ const doGet = (url) => {
       console.log(error);
     });
 };
-
-const Http = {
-  doGet,
-};
-
-export default Http;

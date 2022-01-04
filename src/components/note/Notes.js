@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Note from "./Note";
 import Navbar from "../navbar/Navbar";
-import Http from "../../util/Http";
 
 class NoteGroup extends Component {
   constructor() {
@@ -12,7 +11,6 @@ class NoteGroup extends Component {
   }
 
   componentDidMount() {
-    Http.doGet("/people/1");
     const data = ["hola", "chau", "coso"];
     this.setState({ data });
   }
