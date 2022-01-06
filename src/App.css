@@ -9,6 +9,8 @@
   --color-navbar-background: #252422;
 
   --color-background: #000;
+
+  --color-text: var(--color-navbar-text);
 }
 
 body {
@@ -33,7 +35,7 @@ main {
 
 @media only screen and (max-width: 600px) {
   main {
-    margin: 0;
+    margin-left: -4px;
     margin-bottom: 5.5rem;
   }
 }

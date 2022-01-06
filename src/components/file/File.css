@@ -1,0 +1,30 @@
+.files th,
+td {
+  color: var(--color-navbar-text);
+
+  font-size: 1.5rem;
+}
+
+.files table {
+}
+
+.files th {
+  background-color: var(--color-navbar-secondary);
+}
+
+.files td {
+  background-color: var(--color-navbar-background);
+}
+
+.files table {
+  width: 100%;
+}
+
+.file-td-center {
+  text-align: center;
+}
+
+.file-td-download {
+  color: var(--color-primary);
+  cursor: pointer;
+}

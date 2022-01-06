@@ -8,6 +8,7 @@ const Note = (props) => {
   return (
     <div className="note" onClick={handleClick}>
       {props.title}
+      <p onClick={() => alert("adsd")}>★</p>
     </div>
   );
 };

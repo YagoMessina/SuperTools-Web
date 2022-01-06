@@ -1,5 +1,5 @@
 const home = "/";
-const files = "/file";
+const files = "/files";
 const notes = "/notes";
 
 const path = {
