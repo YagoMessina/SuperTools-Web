@@ -6,20 +6,23 @@ import Path from "./util/Path";
 import Login from "./components/login/Login";
 import Home from "./components/home/Home";
 import Notes from "./components/note/Notes";
+import Files from "./components/file/Files";
+
+import { getJwt } from "./util/Jwt";
 
 function App() {
-  const [user, setUser] = useState("");
-  return user === "" ? (
+  return getJwt() === null ? (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<Login setUser={setUser} />} />
+        <Route path="" element={<Login />} />
       </Routes>
     </BrowserRouter>
   ) : (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<Home />} />
+        <Route path={Path.home} element={<Home />} />
         <Route path={Path.notes} element={<Notes />} />
+        <Route path={Path.files} element={<Files />} />
       </Routes>
     </BrowserRouter>
   );

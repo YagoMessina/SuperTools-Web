@@ -4,35 +4,46 @@ import logo from "../../img/logo.png";
 import WaveTop from "./WaveTop";
 import WaveBottom from "./WaveBottom";
 import { saveJwt } from "../../util/Jwt";
-import axios from "axios";
+import { doPost } from "../../util/Http";
+import { Navigate } from "react-router";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const submit = () => {
-    props.setUser(username);
-    saveJwt(username);
-
-    axios
-      .post("https://localhost:3000/auth", username)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => console.log(error));
+  const login = (e) => {
+    e.preventDefault();
+    doPost(
+      "/auth/login",
+      {
+        username: username,
+        password: password,
+      },
+      (response) => {
+        saveJwt(response.data.token);
+        return <Navigate to="/" />;
+      },
+      (error) => console.log(error)
+    );
   };
 
   return (
     <>
       <div className="login-form">
         <img src={logo} alt="logo" />
-        <form onSubmit={submit}>
+        <form onSubmit={login}>
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
           />
-          <input type="password" placeholder="Password" />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
           <input type="submit" value="Login" />
         </form>
       </div>

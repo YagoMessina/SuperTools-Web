@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://localhost:3000";
+const baseUrl = "http://localhost:8080";
 
 export const doGet = (url) => {
   axios
@@ -10,5 +10,16 @@ export const doGet = (url) => {
     })
     .catch((error) => {
       console.log(error);
+    });
+};
+
+export const doPost = (url, body, onResponse, onError) => {
+  axios
+    .post(baseUrl + url, body)
+    .then((response) => {
+      onResponse(response);
+    })
+    .catch((error) => {
+      onError(error);
     });
 };
