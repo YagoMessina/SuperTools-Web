@@ -1,35 +1,41 @@
-import React, { Component } from "react";
+import React from "react";
 import Note from "./Note";
 import Navbar from "../navbar/Navbar";
+import { useNavigate } from "react-router";
+import { useState, useEffect } from "react";
+import Path from "../../util/Path";
 
-class NoteGroup extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-    };
-  }
+const NoteGroup = () => {
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
-  componentDidMount() {
-    const data = ["hola", "chau", "coso"];
-    this.setState({ data });
-  }
+  //componentDidMount
+  useEffect(() => {
+    setData([
+      { id: 1, title: "hola" },
+      { id: 2, title: "chau" },
+      { id: 3, title: "coso" },
+    ]);
+  }, []);
 
-  render() {
-    const data = this.state.data;
-    return (
-      <div>
-        <Navbar />
-        <main>
-          <section className="notes-grid">
-            {data.map((data) => {
-              return <Note key={data} title={data}></Note>;
-            })}
-          </section>
-        </main>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Navbar />
+      <main>
+        <button
+          className="notes-create-button"
+          onClick={() => navigate(Path.noteCreation)}
+        >
+          +
+        </button>
+        <section className="notes-grid">
+          {data.map((data) => {
+            return <Note key={data.id} id={data.id} title={data.title}></Note>;
+          })}
+        </section>
+      </main>
+    </div>
+  );
+};
 
 export default NoteGroup;

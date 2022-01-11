@@ -6,6 +6,7 @@ import WaveBottom from "./WaveBottom";
 import { saveJwt } from "../../util/Jwt";
 import { doPost } from "../../util/Http";
 import { Navigate } from "react-router";
+import Path from "../../util/Path";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -21,7 +22,7 @@ const Login = (props) => {
       },
       (response) => {
         saveJwt(response.data.token);
-        return <Navigate to="/" />;
+        return <Navigate to={Path.home} />;
       },
       (error) => console.log(error)
     );

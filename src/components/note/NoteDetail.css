@@ -1,0 +1,62 @@
+.note-detail {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 4%;
+}
+
+.note-detail input,
+textarea {
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--color-note);
+  color: var(--color-navbar-text);
+}
+
+.note-detail input[type="text"],
+textarea {
+  border: 2px solid var(--color-note);
+  width: 300px;
+}
+
+.note-detail input::placeholder,
+textarea::placeholder {
+  color: var(--color-navbar-text);
+}
+
+.note-detail textarea {
+  height: 250px;
+}
+
+.note-detail input[type="text"]:focus,
+textarea:focus {
+  outline: 2px solid var(--color-navbar-text);
+  outline-offset: 2px;
+}
+
+.note-detail input[type="submit"] {
+  margin: 0 auto;
+  margin-top: 30px;
+  font-weight: bold;
+  padding: 5px 15px 5px 15px;
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.note-detail input[type="submit"]:hover {
+  background-color: var(--color-primary-darker);
+}
+
+.note-detail input[type="submit"]:focus {
+  background-color: var(--color-primary-darker);
+  outline: none;
+}
+
+.note-detail label {
+  margin-bottom: 4px;
+  display: none; /*displayed none, in NoteCreation displays on change*/
+  color: var(--color-navbar-text);
+}

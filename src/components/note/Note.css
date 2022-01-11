@@ -6,17 +6,16 @@
 
 .note {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #353535;
+  background: var(--color-note);
   font-size: 5rem;
   color: var(--color-text);
 
   border-radius: 4px;
   transition: all 500ms;
-  overflow: hidden;
   cursor: pointer;
+  user-select: none;
 }
 
 .note:hover {
@@ -36,9 +35,28 @@
   color: var(--color-primary);
 }
 
+.notes-create-button {
+  display: flex;
+  margin: 0 auto;
+  background: var(--color-note);
+  font-size: 5rem;
+  color: var(--color-text);
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 10px;
+}
+
+.notes-create-button:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
 @media only screen and (max-width: 600px) {
-  .note button {
+  .note p {
     margin-left: 85%;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
   }
 }
