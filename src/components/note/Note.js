@@ -7,9 +7,16 @@ const Note = (props) => {
   const navigate = useNavigate();
 
   return (
-    <div className="note" onClick={() => navigate(Path.note + "/" + props.id)}>
-      {props.title}
-      <p>★</p>
+    <div>
+      <div
+        className="note"
+        onClick={() => navigate(Path.note + "/" + props.id)}
+      >
+        {props.title}
+      </div>
+      <div className="star" onClick={() => alert("estrellita")}>
+        ★
+      </div>
     </div>
   );
 };

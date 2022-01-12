@@ -11,10 +11,8 @@
   background: var(--color-note);
   font-size: 5rem;
   color: var(--color-text);
-
   border-radius: 4px;
   transition: all 500ms;
-  cursor: pointer;
   user-select: none;
 }
 
@@ -23,16 +21,23 @@
   color: white;
 }
 
-.note:hover p {
+.note:hover + .star {
   color: white;
 }
 
-.note p {
-  position: absolute;
-  margin-left: 26%;
-  margin-bottom: 6%;
+.star:hover {
+  color: white;
+}
+
+.star {
+  width: 40px;
+  margin-top: -44px;
+  margin-left: 5px;
+
   font-size: 2rem;
   color: var(--color-primary);
+  cursor: pointer;
+  user-select: none;
 }
 
 .notes-create-button {
@@ -52,11 +57,4 @@
 .notes-create-button:hover {
   background-color: var(--color-primary);
   color: white;
-}
-
-@media only screen and (max-width: 600px) {
-  .note p {
-    margin-left: 85%;
-    margin-bottom: 15%;
-  }
 }

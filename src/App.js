@@ -15,14 +15,13 @@ import Truco from "./components/truco/Truco";
 import { getJwt } from "./util/Jwt";
 
 function App() {
-  return (
-    /*getJwt() === null ? (
+  return getJwt() === null ? (
     <BrowserRouter>
       <Routes>
         <Route path="" element={<Login />} />
       </Routes>
     </BrowserRouter>
-  ) : (*/
+  ) : (
     <BrowserRouter>
       <Routes>
         <Route path={Path.home} element={<Home />} />

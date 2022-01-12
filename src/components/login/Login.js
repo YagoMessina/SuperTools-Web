@@ -30,6 +30,7 @@ const Login = (props) => {
 
   return (
     <>
+      <WaveTop />
       <div className="login-form">
         <img src={logo} alt="logo" />
         <form onSubmit={login}>
@@ -48,6 +49,7 @@ const Login = (props) => {
           <input type="submit" value="Login" />
         </form>
       </div>
+      <WaveBottom />
     </>
   );
 };
