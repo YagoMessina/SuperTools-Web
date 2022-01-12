@@ -10,6 +10,8 @@ import NoteDetail from "./components/note/NoteDetail";
 import NoteCreation from "./components/note/NoteCreation";
 import Files from "./components/file/Files";
 
+import Truco from "./components/truco/Truco";
+
 import { getJwt } from "./util/Jwt";
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path={Path.files} element={<Files />} />
         <Route path={Path.noteCreation} element={<NoteCreation />} />
         <Route path={Path.note + "/:id"} element={<NoteDetail />} />
+
+        <Route path="/truco" element={<Truco />} />
       </Routes>
     </BrowserRouter>
   );

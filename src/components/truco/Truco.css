@@ -1,0 +1,38 @@
+.truco {
+  height: 688px;
+  width: auto;
+  background-color: black;
+}
+
+.truco h1 {
+  color: white;
+}
+
+.truco .head2 {
+  display: flex;
+}
+
+.truco .head h3 {
+  margin-top: 90px;
+}
+
+.truco .head {
+  display: flex;
+}
+
+.truco button,
+canvas {
+  position: absolute;
+}
+
+.truco button {
+  margin-top: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #eb5e28;
+  border: 2px #403d39 solid;
+  background: #252422;
+  border-radius: 5px;
+}
