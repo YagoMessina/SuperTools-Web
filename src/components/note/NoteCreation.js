@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Navbar from "../navbar/Navbar";
 import "./NoteDetail";
+import { doPost } from "../../util/Http";
 
 const NoteCreation = () => {
   const [title, setTitle] = useState("");
@@ -9,7 +10,18 @@ const NoteCreation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(title + body);
+    doPost(
+      "/api/note",
+      {
+        title: title,
+        body: body,
+        favourite: false,
+      },
+      (response) => {
+        console.log(response);
+      },
+      (error) => console.log(error)
+    );
   };
 
   const selected = {

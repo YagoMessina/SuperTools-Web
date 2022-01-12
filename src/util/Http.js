@@ -1,6 +1,14 @@
 import axios from "axios";
 
+import { getJwt } from "./Jwt";
+
 const baseUrl = "http://localhost:8080";
+
+let config = {
+  headers: {
+    "Auth-Token": getJwt(),
+  },
+};
 
 export const doGet = (url) => {
   axios
@@ -15,7 +23,7 @@ export const doGet = (url) => {
 
 export const doPost = (url, body, onResponse, onError) => {
   axios
-    .post(baseUrl + url, body)
+    .post(baseUrl + url, body, config)
     .then((response) => {
       onResponse(response);
     })
