@@ -24,9 +24,16 @@
 
 .login-form input[type="text"],
 input[type="password"] {
-  text-decoration: underline rgb(66, 66, 66);
+  background-color: #000;
+  color: white;
+  /*text-decoration: underline white;*/
   text-underline-offset: 2.5px;
   width: 100vh;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
 }
 
 .login-form input[type="text"]:focus,
