@@ -10,20 +10,31 @@ let config = {
   },
 };
 
-export const doGet = (url) => {
+export const doGet = (url, onResponse, onError) => {
   axios
-    .get(baseUrl + url)
+    .get(baseUrl + url, config)
     .then((response) => {
-      console.log(response.data);
+      onResponse(response);
     })
     .catch((error) => {
-      console.log(error);
+      onError(error);
     });
 };
 
 export const doPost = (url, body, onResponse, onError) => {
   axios
     .post(baseUrl + url, body, config)
+    .then((response) => {
+      onResponse(response);
+    })
+    .catch((error) => {
+      onError(error);
+    });
+};
+
+export const doPut = (url, body, onResponse, onError) => {
+  axios
+    .put(baseUrl + url, body, config)
     .then((response) => {
       onResponse(response);
     })

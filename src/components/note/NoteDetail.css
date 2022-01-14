@@ -50,11 +50,6 @@ textarea:focus {
   background-color: var(--color-primary-darker);
 }
 
-.note-detail input[type="submit"]:focus {
-  background-color: var(--color-primary-darker);
-  outline: none;
-}
-
 .note-detail label {
   margin-bottom: 4px;
   display: none; /*displayed none, in NoteCreation displays on change*/
