@@ -1,7 +1,6 @@
 .note-detail {
   display: flex;
   justify-content: center;
-
   margin-top: 4%;
 }
 
@@ -29,6 +28,7 @@ textarea::placeholder {
 
 .note-detail textarea {
   height: 250px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .note-detail input[type="text"]:focus,
@@ -39,7 +39,7 @@ textarea:focus {
 
 .note-detail input[type="submit"] {
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 40px;
   font-weight: bold;
   padding: 5px 15px 5px 15px;
   color: white;
@@ -50,8 +50,22 @@ textarea:focus {
   background-color: var(--color-primary-darker);
 }
 
-.note-detail label {
+.note-detail .head {
   margin-bottom: 4px;
   display: none; /*displayed none, in NoteCreation displays on change*/
   color: var(--color-navbar-text);
+}
+
+.note-detail .error {
+  color: var(--color-navbar-text);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .note-detail {
+    margin-top: 25%;
+  }
 }

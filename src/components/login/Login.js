@@ -21,6 +21,7 @@ const Login = (props) => {
       },
       (response) => {
         saveJwt(response.data.token);
+        window.location.reload(false);
       },
       (error) => console.log(error)
     );

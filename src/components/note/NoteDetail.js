@@ -10,6 +10,8 @@ const NoteDetail = (props) => {
   const [body, setBody] = useState("");
   const [favourite, setFavourite] = useState("");
 
+  const [message, setMessage] = useState("");
+
   const id = window.location.href.split("/")[4];
 
   useEffect(() => {
@@ -34,8 +36,10 @@ const NoteDetail = (props) => {
       note.title === title &&
       note.body === body &&
       note.favourite === favourite
-    )
+    ) {
+      setMessage("No hay cambios");
       return;
+    }
     const updatedNote = {
       id: id,
       title: title,
@@ -45,7 +49,10 @@ const NoteDetail = (props) => {
     doPut(
       "/api/note",
       updatedNote,
-      (response) => console.log(response),
+      (response) => {
+        setNote(response.data);
+        setMessage("Actualizado!");
+      },
       (error) => console.log(error)
     );
   };
@@ -53,26 +60,31 @@ const NoteDetail = (props) => {
   const selected = {
     display: "flex",
   };
+
   return (
     <div>
       <Navbar />
       <main className="note-detail">
         <form onSubmit={update}>
-          <label style={title !== "" ? selected : null}>Titulo</label>
+          <label className="head" style={title !== "" ? selected : null}>
+            Titulo
+          </label>
           <input
             type="text"
             placeholder="Titulo"
             value={title}
             onChange={(event) => setTitle(event.target.value)}
           />
-          <label style={body !== "" ? selected : null}>Cuerpo</label>
-          <label>Cuerpo</label>
+          <label className="head" style={body !== "" ? selected : null}>
+            Cuerpo
+          </label>
           <textarea
             placeholder="Cuerpo"
             value={body}
             onChange={(event) => setBody(event.target.value)}
           />
-          <input type="submit" value="Guardar" />
+          <input type="submit" value="Guardar" />{" "}
+          <p className="error">{message}</p>
         </form>
       </main>
     </div>

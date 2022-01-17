@@ -7,6 +7,7 @@ import { doPost } from "../../util/Http";
 const NoteCreation = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,9 +19,9 @@ const NoteCreation = () => {
         favourite: false,
       },
       (response) => {
-        console.log(response);
+        setMessage("Nota Creada");
       },
-      (error) => console.log(error)
+      (error) => setMessage(error.response.data.message)
     );
   };
 
@@ -33,21 +34,25 @@ const NoteCreation = () => {
       <Navbar />
       <main className="note-detail">
         <form onSubmit={handleSubmit}>
-          <label style={title !== "" ? selected : null}>Titulo</label>
+          <label className="head" style={title !== "" ? selected : null}>
+            Titulo
+          </label>
           <input
             type="text"
             placeholder="Titulo"
             value={title}
             onChange={(event) => setTitle(event.target.value)}
           />
-          <label style={body !== "" ? selected : null}>Cuerpo</label>
-          <label>Cuerpo</label>
+          <label className="head" style={body !== "" ? selected : null}>
+            Cuerpo
+          </label>
           <textarea
             placeholder="Cuerpo"
             value={body}
             onChange={(event) => setBody(event.target.value)}
           />
           <input type="submit" value="Guardar" />
+          <p className="error">{message}</p>
         </form>
       </main>
     </div>
