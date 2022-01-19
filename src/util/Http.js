@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { getJwt } from "./Jwt";
 
-const baseUrl = "http://192.168.0.198:8080";
+const baseUrl = "http://192.168.0.171:8080";
 
 let config = {
   headers: {

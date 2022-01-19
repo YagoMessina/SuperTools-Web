@@ -1,7 +1,6 @@
 .note-detail {
   display: flex;
   justify-content: center;
-  margin-top: 4%;
 }
 
 .note-detail input,
@@ -27,7 +26,7 @@ textarea::placeholder {
 }
 
 .note-detail textarea {
-  height: 250px;
+  height: 300px;
   font-family: "Noto Sans", sans-serif;
 }
 
@@ -39,7 +38,7 @@ textarea:focus {
 
 .note-detail input[type="submit"] {
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 10px;
   font-weight: bold;
   padding: 5px 15px 5px 15px;
   color: white;
@@ -48,6 +47,10 @@ textarea:focus {
 
 .note-detail input[type="submit"]:hover {
   background-color: var(--color-primary-darker);
+}
+
+.note-detail label {
+  user-select: none;
 }
 
 .note-detail .head {
@@ -60,12 +63,31 @@ textarea:focus {
   color: var(--color-navbar-text);
   font-weight: bold;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 13px;
   user-select: none;
+}
+
+.note-detail .favourite {
+  display: flex;
+  color: white;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.note-detail input[type="checkbox"] {
+  margin-top: 6px;
+  transform: scale(1.5);
+  margin-right: 8px;
 }
 
 @media only screen and (max-width: 600px) {
   .note-detail {
-    margin-top: 25%;
+    margin-top: 8%;
+  }
+  .note-detail input[type="submit"] {
+    margin-top: 20px;
+  }
+  .note-detail .error {
+    margin-top: 20px;
   }
 }

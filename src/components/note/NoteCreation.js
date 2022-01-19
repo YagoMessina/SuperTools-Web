@@ -7,6 +7,8 @@ import { doPost } from "../../util/Http";
 const NoteCreation = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [favourite, setFavourite] = useState(false);
+
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
@@ -16,7 +18,7 @@ const NoteCreation = () => {
       {
         title: title,
         body: body,
-        favourite: false,
+        favourite: favourite,
       },
       (response) => {
         setMessage("Nota Creada");
@@ -51,6 +53,14 @@ const NoteCreation = () => {
             value={body}
             onChange={(event) => setBody(event.target.value)}
           />
+          <label className="favourite">
+            <input
+              type="checkbox"
+              checked={favourite}
+              onChange={() => setFavourite(!favourite)}
+            />
+            Favorito
+          </label>
           <input type="submit" value="Guardar" />
           <p className="error">{message}</p>
         </form>

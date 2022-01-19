@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Note.css";
 import Path from "../../util/Path";
 import { useNavigate } from "react-router";
@@ -14,7 +14,10 @@ const Note = (props) => {
       >
         {props.title}
       </div>
-      <div className="star" onClick={() => alert("estrellita")}>
+      <div
+        className="star"
+        style={{ color: !props.favourite ? "white" : null }}
+      >
         ★
       </div>
     </div>

@@ -15,7 +15,6 @@ const NoteDetail = (props) => {
   const id = window.location.href.split("/")[4];
 
   useEffect(() => {
-    console.log("mounted");
     doGet(
       "/api/note/" + id,
       (response) => {
@@ -83,6 +82,14 @@ const NoteDetail = (props) => {
             value={body}
             onChange={(event) => setBody(event.target.value)}
           />
+          <label className="favourite">
+            <input
+              type="checkbox"
+              checked={favourite}
+              onChange={() => setFavourite(!favourite)}
+            />
+            Favorito
+          </label>
           <input type="submit" value="Guardar" />{" "}
           <p className="error">{message}</p>
         </form>

@@ -10,9 +10,7 @@ const NoteGroup = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  //componentDidMount
   useEffect(() => {
-    console.log("mounted");
     doGet(
       "/api/note",
       (response) => {
@@ -42,6 +40,7 @@ const NoteGroup = () => {
                 id={data.id}
                 title={data.title}
                 body={data.body}
+                favourite={data.favourite}
               ></Note>
             );
           })}
